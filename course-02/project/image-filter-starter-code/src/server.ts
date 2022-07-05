@@ -10,8 +10,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // Set the network port
   const port = process.env.PORT || 8082;
   
-  // Use the body parser middleware for post requests
-  app.use(bodyParser.json());
+  
 
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   // GET /filteredimage?image_url={{URL}}
@@ -28,7 +27,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   /**************************************************************************** */
-  app.get("/filteredimage", async (req, res) => {
+  // Use the body parser middleware for post requests
+  app.use(bodyParser.json());
+  app.get( "/filteredimage/", async (req:express.Request, res:express.Response) => {
     const {image_url} = req.query;
     
     if(!image_url) {
