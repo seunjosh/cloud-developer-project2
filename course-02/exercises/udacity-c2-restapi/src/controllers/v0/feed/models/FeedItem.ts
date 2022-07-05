@@ -1,3 +1,4 @@
+import { Integer } from 'aws-sdk/clients/apigateway';
 import {Table, Column, Model, HasMany, PrimaryKey, CreatedAt, UpdatedAt, ForeignKey} from 'sequelize-typescript';
 import { User } from '../../users/models/User';
 
@@ -16,4 +17,10 @@ export class FeedItem extends Model<FeedItem> {
   @Column
   @UpdatedAt
   public updatedAt: Date = new Date();
+
+  // @PrimaryKey
+  // @Column
+  // public id!: Integer
+
+
 }

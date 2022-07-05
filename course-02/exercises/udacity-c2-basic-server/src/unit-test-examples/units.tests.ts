@@ -1,4 +1,4 @@
-import { add, divide } from './units';
+import { add, divide, conc } from './units';
 
 import { expect } from 'chai';
 import 'mocha';
@@ -32,6 +32,21 @@ describe('divide', () => {
   it('should throw an error if div by zero', () => {
     expect(()=>{ divide(5,0) }).to.throw('div by 0')
   });
+
+});
+
+describe( 'conc', () => {
+  it('should conc 8 and 6', () => {
+    const result = conc('8','6');
+    expect(result).to.equal('86');
+  });
+
+  it('should throw an error if string is empty', () => {
+    expect(()=>{ conc('','') }).to.throw('string is empty')
+
+  });
+
+
 
 });
 
